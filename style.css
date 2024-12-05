@@ -208,7 +208,7 @@ footer {
 
 .LOGO_TOP{
     position: absolute;
-    padding-top: 20px;
+    padding-top: -350px;
 }
 
 .LOGO{
@@ -1901,9 +1901,11 @@ border: solid 2px black;
 /*---------------------------英語サイズ一覧------------------------------*/
 .TOPen{
     font-family: "dystopian", sans-serif;
-    font-weight: 900;
-    font-size: 100px;
+    font-weight: 700;
+    font-size: 65px;
     font-style: normal;
+    max-width: 6em;
+    line-height:60px;
 }
 /*ケース*/
 .en1{
