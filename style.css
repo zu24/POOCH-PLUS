@@ -1,0 +1,2000 @@
+@charset "UTF-8";
+/*---------------------大元の設定-------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header{
+    height: 80px;
+    background-color: #F8F7F6;
+    z-index: 999;
+}
+
+/* ここから下がハンバーガーメニューに関するCSS */
+/*=========================================
+#hamburger
+=========================================*/
+.hamburger {
+    position: fixed;
+    top: 50px;
+    left: 40px;
+    z-index: 999;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+.hamburger_in{
+    position: fixed;
+    margin-top: 34px;
+    margin-left: 20px;
+    z-index: 998;
+    width: 120px;
+    height: 65px;
+    background-color: #FC5626;
+    border-radius: 50%;
+    border: solid 2.5px black;
+}
+
+.hamburger.is-active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+.hamburger span {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 2.5px;
+    background-color: black;
+    transition: transform .3s;
+}
+
+.hamburger.is-active span {
+    background-color: black;
+}
+
+.hamburger span:nth-child(1) {
+    top: 30%;
+}
+
+.hamburger span:nth-child(2) {
+    top: 60%;
+}
+
+.hamburger span:nth-child(3) {
+    top: 90%;
+}
+
+/*=========================================
+#drawer
+=========================================*/
+.drawer {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 130;
+    width: 100%;
+    height: 130vh;
+    background-color: #FC5626;
+    transition: opacity .3s, visibility .3s;
+}
+
+.drawer.is-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.drawer-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: -60px;
+    /* padding-top: 0px; */
+    padding-left: 50px;
+}
+
+.drawer__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.drawer__item{
+    padding: 10px;
+}
+
+.drawer__link {
+    color: black;
+}
+
+
+
+
+/* ===============================================
+# 共通
+=============================================== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-style: italic;
+    vertical-align: middle;
+
+    shape-margin: .75rem;
+}
+
+/* 実際のプロジェクトではここのコメントを解除して、スマホ時のみ表示させます。 */
+/*.sp-show {
+.display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sp-show {
+    display: block;
+  }
+  .sp-none {
+    display: none;
+  }
+} */
+
+
+  
+
+/**プラスマーク用設定**/
+:root {
+	--icon-width: 2.5px;
+	--icon-color: black;
+}
+
+/**背景色設定**/
+body{
+    background-color: #FCCA0D;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100vh;
+}
+
+/* ===================フッター========================== */
+.back_btn{
+    position: absolute;
+    margin-left: 255px;
+    margin-top: -100px;
+}
+footer {
+    margin-top: 60px;
+    padding-top: 55px;
+    padding-left: 30px;
+    height: 150px;
+    width: 450px;
+    background-color: #FC5626;
+    border: solid 2px black;
+    border-radius: 50px 50px 0px 0px;
+  }
+
+/*-----------------コンテンツを置く場所の背景-------------------*/
+#main{
+    height: 12000px;
+    width: 450px;
+    background-color: #FCCA0D;
+    margin: auto;
+    border-radius: 50px;
+}
+
+.LOGO_TOP{
+    position: absolute;
+    padding-top: 20px;
+}
+
+.LOGO{
+    width: 450px;
+    margin: auto;
+    text-align: center;
+    padding-top: -100px;
+}
+
+
+/*-----------------各項目のブロック分け-------------------*/
+
+.ABOUT{
+background-color: #F8F7F6;
+border-radius: 40px 40px 40px 40px;
+border: solid 2px black;
+}
+
+.ABOUT1{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.ABOUT2{
+    padding-bottom: 100px;
+}
+
+/*-----------------問題部分------------------*/
+
+.PROBLEM{
+    padding-top:100px;
+    padding-bottom: 100px;
+    padding-right: 50px;
+    padding-left: 50px;
+    background-color: #F8F7F6;
+    border-radius: 40px 40px 40px 40px;
+    border: solid 2px black;
+}
+.PROBLEM1{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.PROBLEM_inf{
+    position: absolute;
+    margin-left: 280px;
+    margin-top: -33px;
+}
+
+/* 問題１ */
+.PROBLEM2{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 35px;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 60px;
+}
+.PROBLEM2_head{
+    position: relative;
+}
+.PROBLEM2_inner{
+    display:none;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    max-width: 17em;
+}
+
+/* 問題２ */
+.PROBLEM3{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 35px;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 60px;
+}
+.PROBLEM3_head{
+    position: relative;
+}
+.PROBLEM3_inner{
+    display:none;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    max-width: 17em;
+}
+/* 問題３ */
+.PROBLEM4{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 35px;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 60px;
+}
+.PROBLEM4_head{
+    position: relative;
+}
+.PROBLEM4_inner{
+    display:none;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    max-width: 17em;
+}
+/* 問題４ */
+.PROBLEM5{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 35px;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 60px;
+}
+.PROBLEM5_head{
+    position: relative;
+}
+.PROBLEM5_inner{
+    display:none;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    max-width: 17em;
+}
+  
+/**問題部分のプラスマーク**/
+.icon-plus {
+	color: var(--icon-color);
+	width: 30px;
+	height: 30px;
+	position: absolute;
+    top: 6px;
+    right: 35px;
+}
+.icon-plus:before,
+.icon-plus:after {
+	content: "";
+	position: absolute;
+	top: 12px;
+	width: 30px;
+	height: var(--icon-width);
+	background-color: currentColor;
+}
+.icon-plus:after {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+/**プラスマークここまで**/
+
+
+/*-----------------サイトガイド------------------*/
+
+.SITEGUIDE{
+    padding-top: 100px;
+    padding-bottom: 100px;
+   padding: center;
+    background-color: #F8F7F6;
+    border-radius: 40px 40px 40px 40px;
+    border: solid 2px black;
+}
+.SITEGUIDE1{
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+/**-------------------------01迷子の原因を知る（２）------------------------------**/
+
+/*-----------------2-0-----------------*/
+/**四角**/
+.SITEGUIDE2-0{
+    margin:auto;
+    height: 280px;
+    width: 400px;
+    display: flex;
+    justify-content:center;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 30px;
+}
+/**画像**/
+.SITEGUIDE2-1{
+    margin-top: 90px;
+    margin-left: 45px;
+    margin-right: auto;
+}
+/**文の塊**/
+.SITEGUIDE2-2{
+    margin-top: 55px;
+    margin-right:20px;
+}
+.SITEGUIDE2-2-2{
+    max-width: 10em;
+}
+/**----------------2-0ここまで-------------------**/
+
+/**楕円**/
+.SITEGUIDE2-3{
+    position: absolute;
+    right: auto;
+    top: -37px;
+    color:white;
+    padding-top: 14px;
+    margin: auto;
+    width: 120px;
+    height: 75px;
+    background-color: black;
+    border-radius: 50%;
+    left: calc(50% - 60px);
+    padding-left: 39px;
+}
+/**---------------------------01-----------------------------------------**/
+
+/**--------------------------02対策方法を学ぶ（３）---------------------------------**/
+
+/**四角**/
+.SITEGUIDE3-0{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 280px;
+    width: 400px;
+    display: flex;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 30px;
+}
+/**画像**/
+.SITEGUIDE3-1{
+    margin-top: 90px;
+    margin-left: 45px;
+    margin-right: auto;
+}
+/**文の塊**/
+.SITEGUIDE3-2{
+    margin-top: 55px;
+    margin-right:20px;
+}
+.SITEGUIDE3-2-2{
+    max-width: 10em;
+}
+/**楕円**/
+.SITEGUIDE3-3{
+    position: absolute;
+    right: auto;
+    top: -250px;
+    bottom: 30px;
+    color:white;
+    padding-top: 14px;
+    margin: auto;
+    width: 120px;
+    height: 75px;
+    background-color: black;
+    border-radius: 50%;
+    left: calc(50% - 60px);
+    padding-left: 36px;
+}
+/**----------------------------02--------------------------------**/
+
+/**---------------------03想像する（４）-------------------------------**/
+/**四角**/
+.SITEGUIDE4-0{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 280px;
+    width: 400px;
+    display: flex;
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 30px;
+}
+/**画像**/
+.SITEGUIDE4-1{
+    margin-top: 90px;
+    margin-left: 45px;
+    margin-right: auto;
+}
+/**文の塊**/
+.SITEGUIDE4-2{
+    margin-top: 55px;
+    margin-right:20px;
+}
+.SITEGUIDE4-2-2{
+    max-width: 10em;
+}
+/**楕円**/
+.SITEGUIDE4-3{
+    position: absolute;
+    right: auto;
+    top: -250px;
+    bottom: 30px;
+    color:white;
+    padding-top: 14px;
+    margin: auto;
+    width: 120px;
+    height: 75px;
+    background-color: black;
+    border-radius: 50%;
+    left: calc(50% - 60px);
+    padding-left: 36px;
+}
+/**--------------------------------------------------------------**/
+
+
+/*-------------------ケース1----------------------------*/
+.CASE1{
+    margin-top: 60px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background-color: #F8F7F6;
+    border-radius: 40px 40px 40px 40px;
+    border: solid 2px black;
+}
+/*上真ん中*/
+.CROUD01{
+    position: absolute;
+    padding-left: 145px;
+}
+/*数字下*/
+.CROUD02{
+    position: absolute;
+    padding-top: 130px;
+    padding-left: 250px;
+}
+/*左*/
+.CROUD03{
+    position: absolute;
+    padding-top: 110px;
+    padding-left: 10px;
+}
+
+.CARD1_befor_image{
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+ 
+/*装飾と説明のハコ*/
+.CARD1_top{
+    margin-bottom: 100px;
+}
+/*装飾*/
+.decoration01-04{
+    position: absolute;
+    right: 40px;
+    bottom: -30px;
+    top: 20px;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FF3145;
+    border-radius: 50%;
+}
+/*説明*/
+.CASE1_ex{
+    padding-top: 10px;
+    margin: auto;
+    height: 55px;
+    width: 350px;
+    background-color: white;
+    border-radius: 50px;
+    border: solid 2px black;
+}
+/*------------*/
+
+/*TAP CARD*/
+.CARDinfo1{
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FF3145;
+    padding-top: 15px;
+    height: 55px;
+    width: 250px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+/**---------------1カード-------------------**/
+
+.CARD1-1{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD1-1_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/*カード１表面*/
+.CARD1-1front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FF3145;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD1-1front_no{
+    margin-left: 180px;
+}
+.CARD1-1front_image{
+    margin-top: 20px;
+}
+.CARD1-1front_titl{
+    margin-top: 20px;
+}
+
+/*カード１裏*/
+.CARD1-1back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FF3145;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+/*カード１裏面文字*/
+.CARD1-1back_no{
+    margin-left: 180px;
+}
+.CARD1-1back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD1-1back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+.CARD1-1:hover .CARD1-1_inner,
+.CARD1-1:focus .CARD1-1_inner{
+    transform: rotateY(-180deg);
+}
+
+/*-------------------------２カード--------------------*/
+
+.CARD1-2{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD1-2_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/*カード2表面*/
+.CARD1-2front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FF3145;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD1-2front_no{
+    margin-left: 180px;
+}
+.CARD1-2front_image{
+    margin-top: 20px;
+}
+.CARD1-2front_titl{
+    margin-top: 20px;
+}
+
+/*カード２裏面*/
+.CARD1-2back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FF3145;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+/*カード２裏面文字*/
+.CARD1-2back_no{
+    margin-left: 180px;
+}
+.CARD1-2back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD1-2back_ex{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+.CARD1-2:hover .CARD1-2_inner,
+.CARD1-2:focus .CARD1-2_inner{
+    transform: rotateY(-180deg);
+}
+
+/*-------------------------3カード--------------------*/
+.CARD1-3{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD1-3_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/*カード３表面*/
+.CARD1-3front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FF3145;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD1-3front_no{
+    margin-left: 180px;
+}
+.CARD1-3front_image{
+    margin-top: 20px;
+}
+.CARD1-3front_titl{
+    margin-top: 20px;
+}
+
+/*カード３裏面*/
+.CARD1-3back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FF3145;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+/*カード３裏面文字*/
+.CARD1-3back_no{
+    margin-left: 180px;
+}
+.CARD1-3back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD1-3back_ex{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+.CARD1-3:hover .CARD1-3_inner,
+.CARD1-3:focus .CARD1-3_inner{
+    transform: rotateY(-180deg);
+}
+
+/*1下装飾*/
+.CARD1_bottom{
+    color:white;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FF3145;
+    border-radius: 50%;
+}
+
+/*一番下装飾*/
+.CASE1_bottom{
+    margin-left: 360px;
+    margin-top: auto;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FF3145;
+    border-radius: 50%;
+}
+
+/*-----------------------------------------------*/
+
+/*----------------------ケース２-------------------------*/
+.CASE2{
+    margin-top: 60px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+   padding: center;
+    background-color: #F8F7F6;
+    border-radius: 40px 40px 40px 40px;
+    border: solid 2px black;
+}
+
+.CARD2_befor_image{
+    margin-bottom: 20px;
+}
+
+/*装飾と説明のハコ*/
+.CARD2_top{
+    margin-bottom: 100px;
+}
+/*装飾*/
+.decoration02-04{
+    position: absolute;
+    right: 40px;
+    bottom: -30px;
+    top: 20px;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FCCA0D;
+    border-radius: 50%;
+}
+/*説明*/
+.CASE2_ex{
+    padding-top: 10px;
+    margin: auto;
+    height: 55px;
+    width: 350px;
+    background-color: white;
+    border-radius: 50px;
+    border: solid 2px black;
+}
+/*--------------*/
+
+.CARDinfo2{
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FCCA0D;
+    padding-top: 15px;
+    height: 55px;
+    width: 250px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+/**------------------------2カード------------------**/
+
+/*------------カード１-----------*/
+.CARD2-1{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD2-1_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/*カード１表面*/
+.CARD2-1front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FCCA0D;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD2-1front_no{
+    margin-left: 180px;
+}
+.CARD2-1front_image{
+    margin-top: 20px;
+}
+.CARD2-1front_titl{
+    margin-top: 20px;
+}
+
+/*カード１裏*/
+.CARD2-1back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FCCA0D;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD2-1:hover .CARD2-1_inner,
+.CARD2-1:focus .CARD2-1_inner{
+    transform: rotateY(-180deg);
+}
+
+/*カード１裏面文字*/
+.CARD2-1back_no{
+    margin-left: 180px;
+}
+.CARD2-1back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD2-1back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*-------------カード２--------------*/
+.CARD2-2{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD2-2_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/*カード１表面*/
+.CARD2-2front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FCCA0D;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD2-2front_no{
+    margin-left: 180px;
+}
+.CARD2-2front_image{
+    margin-top: 20px;
+}
+.CARD2-2front_titl{
+    margin-top: 20px;
+}
+
+/*カード2裏*/
+.CARD2-2back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FCCA0D;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD2-2:hover .CARD2-2_inner,
+.CARD2-2:focus .CARD2-2_inner{
+    transform: rotateY(-180deg);
+}
+
+/*カード2裏面文字*/
+.CARD2-2back_no{
+    margin-left: 180px;
+}
+.CARD2-2back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD2-2back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/* -------------カード３------------------- */
+.CARD2-3{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD2-3_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/*カード３表面*/
+.CARD2-3front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FCCA0D;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD2-3front_no{
+    margin-left: 180px;
+}
+.CARD2-3front_image{
+    margin-top: 20px;
+}
+.CARD2-3front_titl{
+    margin-top: 20px;
+}
+
+/*カード3裏*/
+.CARD2-3back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FCCA0D;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD2-3:hover .CARD2-3_inner,
+.CARD2-3:focus .CARD2-3_inner{
+    transform: rotateY(-180deg);
+}
+
+/*カード3裏面文字*/
+.CARD2-3back_no{
+    margin-left: 180px;
+}
+.CARD2-3back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD2-3back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*2下装飾*/
+.CARD2_bottom{
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FCCA0D;
+    border-radius: 50%;
+}
+
+/*一番下装飾*/
+.CASE2_bottom{
+    margin-left: 360px;
+    margin-top: auto;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FCCA0D;
+    border-radius: 50%;
+}
+
+/*-----------------------------------------------*/
+
+/*-----------------------ケース３------------------------*/
+.CASE3{
+    margin-top: 60px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+   padding: center;
+    background-color: #F8F7F6;
+    border-radius: 40px 40px 40px 40px;
+    border: solid 2px black;
+}
+
+.CARD3_befor_image{
+    margin-bottom: 20px;
+}
+
+/*装飾と説明のハコ*/
+/*装飾*/
+.CARD3_top{
+    margin-bottom: 100px;
+}
+.decoration03-04{
+    position: absolute;
+    right: 40px;
+    bottom: -30px;
+    top: 20px;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #4188C9;
+    border-radius: 50%;
+}
+/*説明*/
+.CASE3_ex{
+    padding-top: 10px;
+    margin: auto;
+    height: 55px;
+    width: 350px;
+    background-color: white;
+    border-radius: 50px;
+    border: solid 2px black;
+}
+/*-----------*/
+
+
+.CARDinfo3{
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4188C9;
+    padding-top: 15px;
+    height: 55px;
+    width: 250px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+/**------------------------カード------------------**/
+
+/*------------カード１-----------*/
+.CARD3-1{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD3-1_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード3表面*/
+.CARD3-1front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #4188C9;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD3-1front_no{
+    margin-left: 180px;
+}
+.CARD3-1front_image{
+    margin-top: 20px;
+}
+.CARD3-1front_titl{
+    margin-top: 20px;
+}
+
+/*カード１裏*/
+.CARD3-1back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #4188C9;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD3-1:hover .CARD3-1_inner,
+.CARD3-1:focus .CARD3-1_inner{
+    transform: rotateY(-180deg);
+}
+
+/*カード１裏面文字*/
+.CARD3-1back_no{
+    margin-left: 180px;
+}
+.CARD3-1back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD3-1back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+/*----------カード２---------*/
+.CARD3-2{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD3-2_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード２表面*/
+.CARD3-2front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #4188C9;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD3-2front_no{
+    margin-left: 180px;
+}
+.CARD3-2front_image{
+    margin-top: 20px;
+}
+.CARD3-2front_titl{
+    margin-top: 20px;
+}
+
+/*カード２裏*/
+.CARD3-2back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: white;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #4188C9;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD3-2:hover .CARD3-2_inner,
+.CARD3-2:focus .CARD3-2_inner{
+    transform: rotateY(-180deg);
+}
+
+/*カード１裏面文字*/
+.CARD3-2back_no{
+    color: white;
+    margin-left: 180px;
+}
+.CARD3-2back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD3-2back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*3下装飾*/
+.CARD3_bottom{
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #4188C9;
+    border-radius: 50%;
+}
+
+/*一番下装飾*/
+.CASE3_bottom{
+    margin-left: 360px;
+    margin-top: auto;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #4188C9;
+    border-radius: 50%;
+}
+/*-----------------------------------------------*/
+
+/*-----------------------ケース４------------------------*/
+.CASE4{
+    margin-top: 60px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    padding: center;
+    background-color: #F8F7F6;
+    border-radius: 40px 40px 40px 40px;
+    border: solid 2px black;
+}
+
+.CARD4_befor_image{
+    margin-bottom: 20px;
+}
+
+/*装飾と説明のハコ*/
+/*装飾*/
+.CARD4_top{
+    margin-bottom: 100px;
+}
+.decoration04-04{
+    position: absolute;
+    right: 40px;
+    bottom: -30px;
+    top: 20px;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FC5626;
+    border-radius: 50%;
+}
+/*説明*/
+.CASE4_ex{
+    padding-top: 10px;
+    margin: auto;
+    height: 55px;
+    width: 350px;
+    background-color: white;
+    border-radius: 50px;
+    border: solid 2px black;
+}
+/*--------------*/
+
+.CARDinfo4{
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FC5626;
+    padding-top: 15px;
+    height: 55px;
+    width: 250px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+/**-------------------------カード--------------**/
+/*------------カード１-----------*/
+.CARD4-1{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD4-1_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード１表面*/
+.CARD4-1front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD4-1front_no{
+    margin-left: 180px;
+}
+.CARD4-1front_image{
+    margin-top: 20px;
+}
+.CARD4-1front_titl{
+    margin-top: 20px;
+}
+
+/*カード１裏*/
+.CARD4-1back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD4-1:hover .CARD4-1_inner,
+.CARD4-1:focus .CARD4-1_inner{
+    transform: rotateY(-180deg);
+}
+/*カード１裏面文字*/
+.CARD4-1back_no{
+    margin-left: 180px;
+}
+.CARD4-1back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD4-1back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*------------カード２-----------*/
+.CARD4-2{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD4-2_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード２表面*/
+.CARD4-2front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD4-2front_no{
+    margin-left: 180px;
+}
+.CARD4-2front_image{
+    margin-top: 20px;
+}
+.CARD4-2front_titl{
+    margin-top: 20px;
+}
+
+/*カード2裏*/
+.CARD4-2back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD4-2:hover .CARD4-2_inner,
+.CARD4-2:focus .CARD4-2_inner{
+    transform: rotateY(-180deg);
+}
+/*カード2裏面文字*/
+.CARD4-2back_no{
+    margin-left: 180px;
+}
+.CARD4-2back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD4-2back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*------------カード３-----------*/
+.CARD4-3{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD4-3_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード３表面*/
+.CARD4-3front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD4-3front_no{
+    margin-left: 180px;
+}
+.CARD4-3front_image{
+    margin-top: 20px;
+}
+.CARD4-3front_titl{
+    margin-top: 20px;
+}
+
+/*カード3裏*/
+.CARD4-3back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD4-3:hover .CARD4-3_inner,
+.CARD4-3:focus .CARD4-3_inner{
+    transform: rotateY(-180deg);
+}
+/*カード3裏面文字*/
+.CARD4-3back_no{
+    margin-left: 180px;
+}
+.CARD4-3back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD4-3back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*------------カード４-----------*/
+.CARD4-4{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD4-4_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード４表面*/
+.CARD4-4front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD4-4front_no{
+    margin-left: 180px;
+}
+.CARD4-4front_image{
+    margin-top: 20px;
+}
+.CARD4-4front_titl{
+    margin-top: 20px;
+}
+
+/*カード4裏*/
+.CARD4-4back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD4-4:hover .CARD4-4_inner,
+.CARD4-4:focus .CARD4-4_inner{
+    transform: rotateY(-180deg);
+}
+/*カード4裏面文字*/
+.CARD4-4back_no{
+    margin-left: 180px;
+}
+.CARD4-4back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD4-4back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*3下装飾*/
+.CARD4_bottom{
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    margin: auto;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FC5626;
+    border-radius: 50%;
+}
+
+/*------------カード５-----------*/
+.CARD4-5{
+    perspective: 1000px;
+    margin: 0 auto 20px;
+    width: 280px;
+}
+
+.CARD4-5_inner{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+/*カード５表面*/
+.CARD4-5front{
+    z-index: 2;
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;  
+}
+.CARD4-5front_no{
+    margin-left: 180px;
+}
+.CARD4-5front_image{
+    margin-top: 20px;
+}
+.CARD4-5front_titl{
+    margin-top: 20px;
+}
+
+/*カード5裏*/
+.CARD4-5back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 280px;
+    height: 350px;
+    background-color: #FC5626;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: background-color 2s ease-out;
+}
+.CARD4-5:hover .CARD4-5_inner,
+.CARD4-5:focus .CARD4-5_inner{
+    transform: rotateY(-180deg);
+}
+/*カード5裏面文字*/
+.CARD4-5back_no{
+    margin-left: 180px;
+}
+.CARD4-5back_titl{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.CARD4-5back_ex
+{
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 12em;
+}
+
+/*一番下装飾*/
+.CASE4_bottom{
+    margin-left: 360px;
+    margin-top: auto;
+    color:black;
+    padding-top: 7px;
+    padding-right: 2px;
+    width: 45px;
+    height: 30px;
+    border: solid 2px black;
+    background-color: #FC5626;
+    border-radius: 50%;
+}
+/*-----------------------------------------------*/
+
+/*--------------------------日本語サイズ一覧------------------------*/
+/*サイトガイド大文字*/
+.jp1{
+    text-align: left;
+    font-size: 18px;
+    font-family: "fot-udkakugo-large-pr6n", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height:250%
+}
+/*カードタイトルDB*/
+.jp2{
+    text-align: center;
+    max-width: 25em;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: "fot-udkakugo-large-pr6n", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height:270%
+}
+/*通常文章M-ガイドのタイトル*/
+.jp3{
+    text-align: left;
+    max-width: 23em;
+    font-size: 15px;
+    font-family: "fot-udkakugo-large-pr6n", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height:200%;
+}
+/*通常文章S-カード内文字*/
+.jp4{
+    margin: auto;
+    text-align: left;
+    font-size: 12px;
+    font-family: "fot-udkakugo-large-pr6n", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height:200% 
+}
+/*各ブロックの説明書き*//*ケースごとの状況説明*/
+.jp5{
+    text-align: center;
+    font-size: 15px;
+    font-family: "fot-udkakugo-large-pr6n", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/*---------------------------英語サイズ一覧------------------------------*/
+.TOPen{
+    font-family: "dystopian", sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    font-style: normal;
+}
+/*ケース*/
+.en1{
+    text-align: right;
+    font-family: "dystopian", sans-serif;
+    font-weight: 900;
+    font-size: 150px;
+    font-style: normal;
+}
+/*タイトル*/
+.en2{
+    text-align: left;
+    font-family: "dystopian", sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    font-style: normal; 
+}
+/*ABOUT PROBLEMなど*/
+.en3{
+    font-family: "dystopian", sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    font-style: normal;
+}
+/*ガイド数字*/
+/*カードの数字部分*/
+.en4{
+    font-family: "dystopian", sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    font-style: 3px;
+}
+/*問題の数字部分*/
+.en4-2{
+    text-align: left;
+    font-family: "dystopian", sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    font-style: 3px;
+}
+
+/*サイトガイド、カード*/
+.en5{
+    font-family: "dystopian", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 3px;
+}
+/*タップカード*/
+.en6{
+    text-align: center;
+    font-family: "dystopian", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+/*装飾サイズ*/
+.en7{
+    text-align: right;
+    font-family: "dystopian", sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+/*フッター*/
+.en8{
+    font-family: "dystopian", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+.en9{
+    font-family: "dystopian", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+.en10{
+    font-family: "dystopian", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+}
+.en_menu{
+    font-family: "dystopian", sans-serif;
+    font-size: 37px;
+    font-weight: 700;
+    font-style: normal;
+}
